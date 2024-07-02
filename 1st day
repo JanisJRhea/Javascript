@@ -1,0 +1,108 @@
+//var
+var name="Rhea";
+console.log(name)
+var name="Janis";
+console.log(name)
+
+//let
+function letscoping(){
+    let x=1;
+    if(true){
+        let x=2;
+        console.log(x)
+    }
+    console.log(x)
+node}
+letscoping();
+
+//constant
+const name="Rhea";
+console.log(name);
+
+
+//datatype
+//primitive
+let firstname = "Janis";    //string
+let age = 21;        //age
+let isgood = true     //boolean
+let lastname = undefined ;
+let award = null
+
+//object
+let person={
+    fname:"Janis",
+    lname:"Rhea",
+    age:21
+}
+console.log(person);
+
+//array
+let colors=["red","green","blue"];
+colors[1]="yellow"
+console.log(colors); 
+
+//function
+function greet(name){
+return "hello"+ name + "!";
+}
+console.log(greet("Alice"));
+function greet(name="Guest"){
+return"Hello."+name+"!";
+}
+console.log(greet());
+
+//function 
+function addNumbers(num1, num2) {
+    return num1 + num2;
+}
+let result = addNumbers(5, 3);
+console.log("The result is:", result);*/
+
+//operators
+//arithmetic
+//sum
+let a=5;
+let b=4;
+console.log(a+b);
+
+//product
+let a=3;
+let b=4;
+console.log(a*b);
+
+//power
+let a=3;
+let b=5;
+console.log(a**b);
+
+
+//bitwise operator
+let result=5 | 3 ;
+console.log(result);
+
+
+
+//assignment
+let x=5;
+x+=3;
+console.log(x);
+
+//comparison
+let u=8;
+let v=5;
+console.log(u>v);
+
+//logical
+let a=7;
+let b=3;
+console.log(a>5 && b<5);
+
+//ternary
+let num=10;
+let result=(num%2==0)?"Even":"Odd";
+console.log(result);
+
+
+
+
+
