@@ -1,0 +1,81 @@
+/*application level middleware
+var express = require('express');
+var app = express();
+
+/* Middleware to log request details
+app.use(function(req, res, next) {
+    console.log('Request method:', req.method, 'and URL:', req.url);
+    next();
+});
+
+// Route for the home page
+app.get('/', function(req, res) {
+    console.log("First Page");
+    res.send('Welcome');
+});
+
+// Start the server
+app.listen(3500, function() {
+    console.log('Server is running on http://localhost:3500');
+});*/
+
+const express = require('express');
+const app = express();
+const port = 3500;
+
+// Create a router instance
+const router = express.Router();
+
+// Define router-level middleware
+router.use((req, res, next) => {
+  console.log('Time:', Date.now());
+  next(); 
+});
+
+// Define routes within the router
+router.get('/', (req, res) => {
+  res.send('Hello from the router!');
+});
+// Mount the router at the root level of the application
+app.use('/', router);
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+const express = require('express');
+const app = express();
+const port = 3500;
+
+// Route that throws an error
+app.get('/', (req, res, next) => {
+  throw new Error('Intentional error');
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Log the error stack trace
+  res.status(500).send('Something broke!'); // Send a generic error response
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+const express = require('express');
+const app = express();
+const port = 3500;
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Example route to handle POST requests
+app.post('/api/user', (req, res) => {
+  console.log(req.body); // Output the parsed JSON body
+  res.status(200).json({ message: 'Received JSON data', data: req.body });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
