@@ -1,0 +1,50 @@
+create table student_details(
+stud_id int,
+    First_name varchar,
+	Last_name varchar,
+	Age int,
+	Email_id varchar
+);
+INSERT INTO student_details
+VALUES (1,'Janis','Rhea',21,'jan@gmail.com'),
+(2,'Shyla','Thires',32,'shy989@gmail.com'),
+(3,'Laura','Angel',26,'lauu45@gmail.com'),
+(4,'Delna','Mary',22,'dell78@gmail.com'),
+(5,'Jane','Riya',23,'hhj@gmail.com');
+
+UPDATE student_details
+SET Age=24
+WHERE stud_id=3;
+
+DELETE FROM student_details
+WHERE stud_id =5;
+
+ALTER TABLE student_details add new_one varchar;
+
+ALTER TABLE student_details drop new_one;
+
+SELECT * from student_details;
+
+SELECT first_name,last_name from student_details;
+
+SELECT age from student_details;
+
+SELECT age,email_id from student_details where age>21 and age<30;
+
+SELECT age,email_id from student_details where not age=24;
+
+SELECT age,email_id from student_details where age>21 or age<30;
+
+ALTER  table student_details add address varchar;
+
+ALTER  table student_details delete address varchar;
+
+TRUNCATE table student_details;
+
+INSERT INTO student_details(stud_id,first_name,last_name)
+VALUES (5,'Sina','Lomy'),
+(6,'Hina','Roy');
+
+UPDATE student_details
+SET email_id='kel8789@gmail.com'
+WHERE first_name='Laura'
